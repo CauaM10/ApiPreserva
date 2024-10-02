@@ -10,11 +10,24 @@ namespace Api.Data
 
         }
 
-        public DbSet<UsersModel> User { get; set; }
+        public DbSet<CadastroEmpresaModel> Cadastro { get; set; }
+
+        public DbSet<TipoCombustivelModel> TipoCombustivel { get; set; }
+
+        public DbSet<MotoristaModel> Motorista { get; set; }
+
+        public DbSet<VeiculoModel> Veiculo { get; set; }
+
+        public DbSet<ConsumoModel> Consumo { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UsersMap());
+            modelBuilder.ApplyConfiguration(new CadastroEmpresaMap());
+            modelBuilder.ApplyConfiguration(new TipoCombustivelMap());
+            modelBuilder.ApplyConfiguration(new MotoristaMap());
+            modelBuilder.ApplyConfiguration(new VeiculoMap());
+            modelBuilder.ApplyConfiguration(new ConsumoMap());
             base.OnModelCreating(modelBuilder);
         }
 
