@@ -24,7 +24,13 @@ builder.Services.AddScoped<IMotoristaRepositorio, MotoristaRepositorio>();
 
 builder.Services.AddScoped<IVeiculoRepositorio, VeiculoRepositorio>();
 
-builder.Services.AddScoped<IConsumoRepositorio, ConsumoRepositorio>();
+builder.Services.AddScoped<ILugarRepositorio, LugarRepositorio>();
+
+builder.Services.AddScoped<ISobreNosRepositorio, SobreNosRepositorio>();
+
+builder.Services.AddScoped<IModeloRepositorio, ModeloRepositorio>();
+
+builder.Services.AddScoped<IMarcaRepositorio, MarcaRepositorio>();
 
 builder.Services.AddCors(options =>
 {

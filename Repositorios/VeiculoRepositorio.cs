@@ -17,12 +17,17 @@ namespace Api.Repositorios
 
         public async Task<List<VeiculoModel>> GetAll()
         {
-            return await _dbContext.Veiculo.ToListAsync();
+            return await _dbContext.Veiculo.Include(x => x.Motorista)
+                                           .Include(x=> x.TipoCombustivel)
+                                           .Include(x=> x.Modelo).ToListAsync();
         }
 
         public async Task<VeiculoModel> GetById(int id)
         {
-            return await _dbContext.Veiculo.FirstOrDefaultAsync(x => x.VeiculoId == id);
+            return await _dbContext.Veiculo.Include(x => x.Motorista)
+                                            .Include(x => x.TipoCombustivel)
+                                           .Include(x => x.Modelo)
+                                           .FirstOrDefaultAsync(x => x.VeiculoId == id);
         }
 
         public async Task<VeiculoModel> InsertVeiculo(VeiculoModel veiculo)
@@ -41,11 +46,10 @@ namespace Api.Repositorios
             }
             else
             {
-                veiculos.ModeloVeiculo = veiculo.ModeloVeiculo; 
-                veiculos.MarcaVeiculo = veiculo.MarcaVeiculo;
+                veiculos.ModeloId = veiculo.ModeloId; 
                 veiculos.HodometroVeiculo = veiculo.HodometroVeiculo;
                 veiculos.TipoCombustivelId = veiculo.TipoCombustivelId;
-                veiculos.ConsumoId = veiculo.ConsumoId;
+                veiculos.Consumo = veiculo.Consumo;
                 veiculos.MotoristaId = veiculo.MotoristaId;
 
                 _dbContext.Veiculo.Update(veiculos);

@@ -9,12 +9,11 @@ namespace Api.Data
         public void Configure(EntityTypeBuilder<VeiculoModel> builder)
         {
             builder.HasKey(x => x.VeiculoId);
-            builder.Property(x => x.ModeloVeiculo).IsRequired().HasMaxLength(255); 
-            builder.Property(x => x.MarcaVeiculo).IsRequired().HasMaxLength(255);
+            builder.Property(x => x.ModeloId).IsRequired().HasMaxLength(255); 
             builder.Property(x => x.HodometroVeiculo).IsRequired().HasMaxLength(255);
             builder.Property(x => x.TipoCombustivelId).IsRequired().HasMaxLength(255);
             builder.Property(x => x.MotoristaId).IsRequired().HasMaxLength(255);
-            builder.Property(x => x.ConsumoId).IsRequired().HasMaxLength(255);
+            builder.Property(x => x.Consumo).IsRequired().HasMaxLength(255);
 
         }
     }

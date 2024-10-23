@@ -18,7 +18,16 @@ namespace Api.Data
 
         public DbSet<VeiculoModel> Veiculo { get; set; }
 
-        public DbSet<ConsumoModel> Consumo { get; set; }
+        public DbSet<LugarModel> Lugar { get; set; }
+
+        public DbSet<SobreNosModel> SobreNos { get; set; }
+
+        public DbSet<ModeloModel> Modelo { get; set; }
+
+        public DbSet<MarcaModel> Marca { get; set; }
+
+
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,7 +36,10 @@ namespace Api.Data
             modelBuilder.ApplyConfiguration(new TipoCombustivelMap());
             modelBuilder.ApplyConfiguration(new MotoristaMap());
             modelBuilder.ApplyConfiguration(new VeiculoMap());
-            modelBuilder.ApplyConfiguration(new ConsumoMap());
+            modelBuilder.ApplyConfiguration(new LugarMap());
+            modelBuilder.ApplyConfiguration(new SobreNosMap());
+            modelBuilder.ApplyConfiguration(new ModeloMap());
+            modelBuilder.ApplyConfiguration(new MarcaMap());
             base.OnModelCreating(modelBuilder);
         }
 
