@@ -9,6 +9,7 @@ namespace Api.Data
         public void Configure(EntityTypeBuilder<VeiculoModel> builder)
         {
             builder.HasKey(x => x.VeiculoId);
+            builder.Property(x => x.placaVeiculo).IsRequired().HasMaxLength(255);
             builder.Property(x => x.ModeloId).IsRequired().HasMaxLength(255); 
             builder.Property(x => x.HodometroVeiculo).IsRequired().HasMaxLength(255);
             builder.Property(x => x.TipoCombustivelId).IsRequired().HasMaxLength(255);
