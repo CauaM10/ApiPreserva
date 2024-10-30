@@ -47,7 +47,7 @@ namespace Api.Repositorios
             else
             {
                 veiculos.ModeloId = veiculo.ModeloId; 
-                veiculos.HodometroVeiculo = veiculo.HodometroVeiculo;
+
                 veiculos.TipoCombustivelId = veiculo.TipoCombustivelId;
                 veiculos.Consumo = veiculo.Consumo;
                 veiculos.MotoristaId = veiculo.MotoristaId;

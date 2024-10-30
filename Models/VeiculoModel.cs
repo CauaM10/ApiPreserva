@@ -12,8 +12,6 @@ namespace Api.Models
 
         public string placaVeiculo { get; set; }
 
-        public int HodometroVeiculo { get; set; }
-
         public TipoCombustivelModel TipoCombustivel { get; set; }
         public int TipoCombustivelId { get; set; }
 
