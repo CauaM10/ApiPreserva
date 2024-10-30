@@ -14,6 +14,7 @@ namespace Api.Data
             builder.Property(x => x.TipoCombustivelId).IsRequired().HasMaxLength(255);
             builder.Property(x => x.MotoristaId).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Consumo).IsRequired().HasMaxLength(255);
+            builder.Property(x => x.placaVeiculo).IsRequired().HasMaxLength(255);
 
         }
     }

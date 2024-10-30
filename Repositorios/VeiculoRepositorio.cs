@@ -51,6 +51,7 @@ namespace Api.Repositorios
                 veiculos.TipoCombustivelId = veiculo.TipoCombustivelId;
                 veiculos.Consumo = veiculo.Consumo;
                 veiculos.MotoristaId = veiculo.MotoristaId;
+                veiculos.placaVeiculo = veiculo.placaVeiculo;
 
                 _dbContext.Veiculo.Update(veiculos);
                 await _dbContext.SaveChangesAsync();

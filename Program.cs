@@ -32,6 +32,8 @@ builder.Services.AddScoped<IModeloRepositorio, ModeloRepositorio>();
 
 builder.Services.AddScoped<IMarcaRepositorio, MarcaRepositorio>();
 
+builder.Services.AddScoped<IKmsRodadosRepositorio, KmsRodadosRepositorio>();
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(

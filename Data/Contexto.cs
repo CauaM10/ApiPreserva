@@ -24,6 +24,8 @@ namespace Api.Data
 
         public DbSet<ModeloModel> Modelo { get; set; }
 
+        public DbSet<KmsRodadosModel> KmsRodados { get; set; }
+
         public DbSet<MarcaModel> Marca { get; set; }
 
 
@@ -40,6 +42,7 @@ namespace Api.Data
             modelBuilder.ApplyConfiguration(new SobreNosMap());
             modelBuilder.ApplyConfiguration(new ModeloMap());
             modelBuilder.ApplyConfiguration(new MarcaMap());
+            modelBuilder.ApplyConfiguration(new KmsRodadosMap());
             base.OnModelCreating(modelBuilder);
         }
 
