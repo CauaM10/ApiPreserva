@@ -16,6 +16,21 @@ namespace Api.Controllers
             _kmsRodadosRepositorio = kmsRodadosRepositorio;
         }
 
+
+        [HttpGet("GetKmVeiculoMes/{id:int}/{mes:int}")]
+        public async Task<ActionResult<int>> GetKmVeiculoMonth( int id, int mes )
+        {
+            int kmsRodadoss = await _kmsRodadosRepositorio.GetKmVeiculoMes( id, mes );
+            return Ok(kmsRodadoss);
+        }
+
+        [HttpGet("GetKmVeiculoDia/{id:int}/{date}")]
+        public async Task<ActionResult<KmsRodadosModel>> GetKmVeiculoDia(int id, string date)
+        {
+            KmsRodadosModel kmsRodadoss = await _kmsRodadosRepositorio.GetKmVeiculoDia(id, date);
+            return Ok(kmsRodadoss);
+        }
+
         [HttpGet("GetAllKmsRodados")]
         public async Task<ActionResult<List<KmsRodadosModel>>> GetAllKmsRodados()
         {

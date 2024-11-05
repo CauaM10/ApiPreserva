@@ -15,6 +15,23 @@ namespace Api.Repositorios
             _dbContext = dbContext;
         }
 
+        public async Task<KmsRodadosModel> GetKmVeiculoDia( int id , String date )
+        {
+            return await _dbContext.KmsRodados
+                .Where(k => k.VeiculoId == id && k.KmsData.Date == DateTime.Parse(date))
+                .Include(x => x.Veiculo)
+                .Include( x => x.Veiculo.TipoCombustivel)
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<int> GetKmVeiculoMes(int id, int mes )
+        {
+            return await _dbContext.KmsRodados
+                .Where(k => k.VeiculoId == id && k.KmsData.Month == mes)
+                .SumAsync(k => k.KmsRodados);
+
+        }
+
         public async Task<List<KmsRodadosModel>> GetAll()
         {
             return await _dbContext.KmsRodados.Include(x => x.Veiculo).ToListAsync();

@@ -6,6 +6,10 @@ namespace Api.Repositorios.Interfaces
     {
         Task<List<KmsRodadosModel>> GetAll();
 
+        Task<KmsRodadosModel> GetKmVeiculoDia(int id, string date );
+
+        Task<int> GetKmVeiculoMes(int id, int mes);
+
         Task<KmsRodadosModel> GetById(int id);
 
         Task<KmsRodadosModel> InsertKmsRodados(KmsRodadosModel kmsRodados);
